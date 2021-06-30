@@ -1,5 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import Quote from "./component/Quote";
+
+
 function App() {
   const [quote,setQuote]=useState({
     anime:null,
@@ -15,9 +17,10 @@ function App() {
   }
   useEffect (async() => {
     setQuote(await fetchQuote());
-  }, []);
+  }, [ ]);
   return (
     <div className="App">
+      
     <Quote quote={quote} />
     <button onClick={generate}>Generate new </button>
     </div>
